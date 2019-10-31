@@ -1,3 +1,3 @@
 export default {
-	rootPath: 'http://localhost:6969'
+	rootPath: 'https://manga-x-backend.herokuapp.com'
 };
