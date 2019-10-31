@@ -1,35 +1,22 @@
-// import React from 'react';
-import './App.css';
-import NavBar  from './components/NavBar';
-import HomeScreen from './container/HomeScreen'
-import DetailScreen from './container/DetailScreen'
-import Read from './container/Read'
+import React, { Component } from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React,{Component} from 'react';
-import axios from 'axios';
-import ReactDOM from "react-dom";
-import {BrowserRouter, Route,Link} from "react-router-dom";
+import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-// import { connect } from 'react-redux'
-// import { withRouter } from 'react-router-dom'
-class App extends Component{
-  render(){
-    return(
-      <BrowserRouter>
-        <div className="App">
-        <Route exact path="/" component={HomeScreen}/>
-            {/* <Route exact path="/">
-              <HomeScreen/>
-            </Route> */}
-            <Route exact path="/book/:id" component={DetailScreen}/>
-            <Route exact path="/cc" component={Read}/>
-        </div>
+import HomeScreen from './screens/HomeScreen';
+import DetailScreen from './screens/DetailScreen';
 
-      </BrowserRouter>
-    );
-  }
-
+export default class App extends Component {
+	state = {}
+	render() {
+		return (
+			<BrowserRouter>
+				<div className="App">
+					<Route exact path="/" component={HomeScreen} />
+					<Route path="/book/:id" component={DetailScreen} />
+				</div>
+			</BrowserRouter>
+		);
+	}
 }
-
-export default App;
-// export default withRouter(connect(App)(DetailScreen))
