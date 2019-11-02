@@ -1,7 +1,7 @@
   
 import React, { Component } from 'react';
 import Avatar from './Avatar';
-import './MainContent.css';
+import '../css/MainContent.css';
 import { Link } from 'react-router-dom';
 
 const nanatsu="https://static.fptplay.net/static/img/share/video/25_09_2019/nanatsu-no-taizai-kamigami-no-gekirin-225-09-2019_16g25-14.jpg";
