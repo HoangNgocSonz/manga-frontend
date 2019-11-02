@@ -1,32 +1,37 @@
+  
 import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-
+import './Avatar.css';
 export default class Avatar extends Component {
 	render() {
 		return (
-			<Card className="col-sm-4 border-primary my-3 mr-auto ml-auto" style={{ width: '18rem' }}>
-				<span className="border mt-2">
-					<Card.Img
-						className="img-fluid"
-						variant="top"
-						src={this.props.img.avalink}
-						alt={this.props.img.title}
+			<div id="wrapper">
+				<div className="avatar border border-primary rounded mt-2"id="img-wrapper" >
+					<img
+					className="imgAvatar"
+					src={this.props.img.avalink}
+					alt={this.props.img.title}
 					/>
-				</span>
-				{/* <img className="image-fluid"
-                    width="140" height="210"
-                    src={this.props.img.avalink}
-                    alt={this.props.img.title}
-                /> */}
-				<Card.Body>
-					<h4>{this.props.img.title}</h4>
-					<p className="font-italic font-weight-light" rel="author">
-						{this.props.img.author}
+					<center>
+						<h6 className="titleUnderAvatar">{this.props.img.title}</h6>
+						<p className="authorUnderAvatar" rel="author">
+							{this.props.img.author}
+						</p>
+					</center>
+				</div>
+				<div className="moreInfo" id="text-wrapper">
+					<p className="textNomal">
+						{
+							this.props.img.description
+						}
+					{/* What is Lorem Ipsum?
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+					industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+					scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into  */}
 					</p>
-					<Button variant="primary">See more</Button>
-				</Card.Body>
-			</Card>
+				</div>
+
+			</div>
+			
 		);
 	}
 }

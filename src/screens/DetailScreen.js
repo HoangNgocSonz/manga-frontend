@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Avatar from '../components/Avatar';
 import axios from '../axios';
+import './DetailScreen.css';
+import { Link } from 'react-router-dom';
 
 import NavBar from '../components/NavBar';
 
@@ -9,21 +11,72 @@ export default class DetailScreen extends Component {
 
 	componentDidMount() {
 		axios
-			.get('/api/book/:id')
+			.get(`/api/book/${this.props.match.params.imageId}`)
 			.then((data) => {
-				console.log(data);
+				//console.log(data);
 				this.setState({
 					image: data.data.data
 				});
+				console.log("aa");
+				console.log(this.state.image)
 			})
 			.catch((err) => console.log(err));
 	}
+
 	render() {
-		return ( 
+		return (
 			<div>
-				<NavBar onSearchChanged={this._onSearchChanged} />
-				{this.state.image ? <Avatar img={this.state.image} /> : ""}
+				<NavBar category={this.state.image ? this.state.image.category : ""} />
+				<div className="main_content container" id="container">
+					<div className="row" id="rowAvatar">
+						<div className="col-lg-2 col-md-3 col-sm-4 col-4">
+							{this.state.image ? 
+								<img src={this.state.image.avalink} className="detailAvatar"></img>
+							 : ''}
+						</div>
+						<div className="col-lg-10 col-md-9 col-sm-6 col-6" >
+							<div id="col-10Avater">
+								{
+									this.state.image ?
+									<div>
+										<h3>{this.state.image.title}</h3>
+										<p className="contentAvatar">Tác giả: {this.state.image.author}</p>
+										<Link to={{
+											pathname: '/category',
+											state: { category: this.state.image.category }
+											}}>
+											<button type="button" class="btn btn-outline-success" id="contentAvatar">
+												{this.state.image.category}
+											</button>
+										</Link>
+										<p className="contentAvatar">{this.state.image.description}</p>
+									</div>
+									:''
+								}
+							</div>	
+						</div>
+						{/* <div className="col-4">
+							{this.state.image ? 
+							// <Avatar img={this.state.image} />
+							<img src={this.state.image.avalink}></img>
+							 : ''}
+						</div>
+						<div className="col-8 bg-light mt-2 border-primary rounded">
+							{this.state.image ? <p>{this.state.image.description}</p> : ''}
+							{this.state.image ?
+								<Link to={{
+									pathname: '/category',
+									state: { category: this.state.image.category }
+								}}>
+									<button type="button" className="btn btn-outline-primary" >
+										{this.state.image.category}
+									</button>
+								</Link>
+								: ""}
+						</div> */}
+					</div>
+				</div>
 			</div>
-			);
-		}
+		);
 	}
+}

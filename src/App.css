@@ -1,13 +1,11 @@
 body {
-	background: #bababa;
+	background: #ebebeb;
 }
 
 .navbar {
 	background: white;
 }
 
-/* @media screen and (max-width: 1050px) {
-	.col-4 {
-		display: inline;
-	}
-  } */
+.avatar {
+	background: #ebebeb;
+}

@@ -1,0 +1,71 @@
+.imgAvatar{
+	width:100%;
+}
+@media only screen and (min-width: 0px) {
+	.imgAvatar{
+		height: 11em;
+	}
+}
+@media only screen and (min-width: 350px) {
+	.imgAvatar{
+		height: 13em;
+	}
+}
+@media only screen and (min-width: 400px) {
+	.imgAvatar{
+		height: 15em;
+	}
+}
+@media only screen and (min-width: 450px) {
+	.imgAvatar{
+		height: 17em;
+	}
+}
+@media only screen and (min-width: 500px) {
+	.imgAvatar{
+		height: 20em;
+	}
+}
+@media only screen and (min-width: 576px) {
+	.imgAvatar{
+		height: 14em;
+	}
+}
+@media only screen and (min-width: 960px) {
+	.imgAvatar{
+		height: 15em;
+	}
+}
+.imgAvatar{
+	border-radius: 6px;
+	border:1px solid;
+	border-color:rgb(204, 204, 204);
+
+}
+.titleUnderAvatar{
+	color: rgb(58, 58, 58);
+}
+.authorUnderAvatar{
+	color: rgb(58, 58, 58);
+}
+
+#text-wrapper{
+	position: absolute;
+    display: none;
+    font-size:14px;
+    font-family:Arial,Tahoma;
+    font-weight:bold;
+	background-color: rgb(255, 255, 255);
+	top:-20px;
+	left:-195px;
+	border-radius: 6px;
+	box-shadow: -1px 1px 7px rgb(68, 68, 68);
+	opacity: 0.9;
+}
+#img-wrapper:hover + #text-wrapper{
+	display: block;
+	width: 220px;
+}
+.textNomal{
+	margin: 5%;
+}
