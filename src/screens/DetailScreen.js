@@ -7,18 +7,17 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 export default class DetailScreen extends Component {
-	state = {};
+	state = {
+		category:String
+	};
 
 	componentDidMount() {
 		axios
 			.get(`/api/book/${this.props.match.params.imageId}`)
 			.then((data) => {
-				//console.log(data);
 				this.setState({
 					image: data.data.data
 				});
-				console.log("aa");
-				console.log(this.state.image)
 			})
 			.catch((err) => console.log(err));
 	}
@@ -42,8 +41,7 @@ export default class DetailScreen extends Component {
 										<h3>{this.state.image.title}</h3>
 										<p className="contentAvatar">Tác giả: {this.state.image.author}</p>
 										<Link to={{
-											pathname: '/category',
-											state: { category: this.state.image.category }
+											pathname: `/category/${this.state.image.category}`,
 											}}>
 											<button type="button" class="btn btn-outline-success" id="contentAvatar">
 												{this.state.image.category}

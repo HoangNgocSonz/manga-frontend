@@ -38,9 +38,10 @@ export default class App extends Component {
 					<Route exact path="/api/book/:imageId" render={(props) => {
 						return <DetailScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
-					<Route exact path="/category" render={(props) => {
+					<Route exact path="/category/:name" render={(props) => {
 						return <CategoryScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
+
 				</div>
 			</BrowserRouter>
 		);
