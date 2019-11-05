@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 export default class DetailScreen extends Component {
-	state = {};
+	state = {
+		category: String
+	};
 
 	componentDidMount() {
 		axios
 			.get(`/api/book/${this.props.match.params.imageId}`)
 			.then((data) => {
-				//console.log(data);
 				this.setState({
 					image: data.data.data
 				});
