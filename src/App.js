@@ -9,6 +9,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import CategoryScreen from './screens/CategoryScreen';
+import ReadBookScreen from './screens/ReadBookScreen';
 
 export default class App extends Component {
 	state = {};
@@ -37,6 +38,9 @@ export default class App extends Component {
 					}} />
 					<Route exact path="/api/book/:imageId" render={(props) => {
 						return <DetailScreen {...props} username={this.state.username} onLogin={this._onLogin} />
+					}} />
+					<Route exact path="/api/chapter/:imageId" render={(props) => {
+						return <ReadBookScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
 					<Route exact path="/category" render={(props) => {
 						return <CategoryScreen {...props} username={this.state.username} onLogin={this._onLogin} />
