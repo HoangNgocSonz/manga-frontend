@@ -21,6 +21,7 @@ export default class CategoryScreen extends Component {
             })
             .catch((err) => console.log(err));
     }
+
     render() {
         const allAvatars = this.state.image.map(img =>
             <div key={img._id} className="col-lg-2 col-md-3 col-sm-4 col-6" >

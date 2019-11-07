@@ -18,10 +18,12 @@ export default class ReadBookScreen extends Component {
             .catch((err) => console.log(err));
     }
 
+    _onSearchChanged = text => this.setState({ searchString: text });
+
     render() {
         return (
             <div className="container">
-                <NavBar></NavBar>
+                <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
                 {this.state.image
                     ? this.state.image.link.map(link => {
                         return <div className="row">
