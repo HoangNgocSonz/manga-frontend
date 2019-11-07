@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../axios';
+import { from } from 'rxjs';
+import NavBar from '../components/NavBar';
 
 export default class ReadBookScreen extends Component {
     state = {};
@@ -19,6 +21,7 @@ export default class ReadBookScreen extends Component {
     render() {
         return (
             <div className="container">
+                <NavBar></NavBar>
                 {this.state.image
                     ? this.state.image.link.map(link => {
                         return <div className="row">

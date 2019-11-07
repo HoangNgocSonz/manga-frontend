@@ -1,4 +1,4 @@
-  
+
 import React, { Component } from 'react';
 import Avatar from './Avatar';
 import '../css/MainContent.css';
@@ -21,7 +21,6 @@ export default class MainContent extends Component {
                     </div>
                 </div>
             </div>
-           
         )
     }
 }

@@ -42,7 +42,7 @@ export default class App extends Component {
 					<Route exact path="/api/chapter/:imageId" render={(props) => {
 						return <ReadBookScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
-					<Route exact path="/category:name" render={(props) => {
+					<Route exact path="/category/:category" render={(props) => {
 						return <CategoryScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
 				</div>

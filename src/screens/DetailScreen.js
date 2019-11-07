@@ -43,7 +43,7 @@ export default class DetailScreen extends Component {
 												pathname: '/category',
 												state: { category: this.state.image.category }
 											}}>
-												<button type="button" class="btn btn-outline-success" id="contentAvatar">
+												<button type="button" class="btn btn-outline-primary" id="contentAvatar">
 													{this.state.image.category}
 												</button>
 											</Link>
@@ -59,7 +59,7 @@ export default class DetailScreen extends Component {
 						{this.state.image
 							? this.state.image.chapter.map(chapter => {
 								return <Link to={`/api/chapter/${chapter._id}`} >
-									<button className="btn btn-outline-successbtn btn-outline-success">
+									<button className="btn btn-outline-primarybtn btn-outline-primary">
 										{chapter.number}
 									</button>
 								</Link>

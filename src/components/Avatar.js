@@ -5,7 +5,7 @@ export default class Avatar extends Component {
 	render() {
 		return (
 			<div id="wrapper">
-				<div className="avatar border border-primary rounded mt-2" id="img-wrapper" >
+				<div className="avatar mt-2" id="img-wrapper" >
 					<img
 						className="imgAvatar"
 						src={this.props.img.avalink}

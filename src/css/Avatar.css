@@ -35,18 +35,19 @@
 	.imgAvatar{
 		height: 15em;
 	}
-}
+} 
 .imgAvatar{
 	border-radius: 6px;
 	border:1px solid;
 	border-color:rgb(204, 204, 204);
 
-}
+} 
 .titleUnderAvatar{
-	color: rgb(58, 58, 58);
+	margin-top: 2%;
+	color: rgb(70, 80, 170);
 }
 .authorUnderAvatar{
-	color: rgb(58, 58, 58);
+	color: rgb(70, 80, 170);
 }
 
 #text-wrapper{

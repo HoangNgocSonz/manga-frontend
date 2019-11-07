@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 
 import React, { Component } from 'react';
 import Avatar from './Avatar';
 import '../css/MainContent.css';
 import { Link } from 'react-router-dom';
+
 
 const nanatsu = "https://static.fptplay.net/static/img/share/video/25_09_2019/nanatsu-no-taizai-kamigami-no-gekirin-225-09-2019_16g25-14.jpg";
 const kimetsu = "https://gamehot24h.com/wp-content/uploads/2019/10/Kimetsu-no-Yaiba-chap-181_1572323569.jpg";
@@ -13,14 +15,14 @@ export default class MainContent extends Component {
     render() {
         const allAvatars = this.props.img.map(img =>
             <div key={img._id} className="col-lg-2 col-md-3 col-sm-4 col-6" >
-                <Link to={`/api/book/${img._id}`} >
+                <Link target="#" to={`/api/book/${img._id}`} >
                     <Avatar img={img} />
                 </Link>
             </div>
         );
         return (
             <div>
-                <div className="container" id="hot">
+                <div className="container bg-dark px-3" id="hot">
                     <div className="row">
                         <div className="col-3">
                             <img className="hot1" src={nanatsu}></img>
