@@ -15,7 +15,7 @@ export default class MainContent extends Component {
     render() {
         const allAvatars = this.props.img.map(img =>
             <div key={img._id} className="col-lg-2 col-md-3 col-sm-4 col-6" >
-                <Link href="#" to={`/api/book/${img._id}`} >
+                <Link to={`/api/book/${img._id}`} >
                     <Avatar img={img} />
                 </Link>
             </div>
