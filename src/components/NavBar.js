@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import '../css/Navbar.css';
 import SearchField from './SearchField';
 
 export default class NavBar extends Component {
@@ -12,7 +12,7 @@ export default class NavBar extends Component {
 					<Link to={{
                         pathname: `/`,
                         }}>
-                        <a class="navbar-brand" href="#">Home</a>
+                        <a className="navbar-brand" href="#">Home</a>
                     </Link>
 
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
