@@ -11,7 +11,7 @@ export default class CategoryScreen extends Component {
     componentDidMount() {
         console.log('props', this.props)
         axios
-            .get(`/api/book?category=${this.props.match.params.category}`)
+            .get(`/api/book?category=${this.props.match.params.name}`)
             .then((data) => {
                 this.setState({
                     image: data.data.data
