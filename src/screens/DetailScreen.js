@@ -61,7 +61,7 @@ export default class DetailScreen extends Component {
 						{this.state.image
 							? this.state.image.chapter.map(chapter => {
 								return <Link to={`/api/chapter/${chapter._id}`} >
-									<button className="btn btn-outline-primarybtn btn-outline-primary">
+									<button className="btn btn-outline-primary mx-1 my-2">
 										{chapter.number}
 									</button>
 								</Link>
