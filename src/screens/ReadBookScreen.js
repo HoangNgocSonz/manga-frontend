@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../axios';
 import { from } from 'rxjs';
 import NavBar from '../components/NavBar';
+import '../css/read.css';
 
 export default class ReadBookScreen extends Component {
     state = {};
@@ -23,16 +24,20 @@ export default class ReadBookScreen extends Component {
     render() {
         return (
             <div className="container">
+                <center>
                 <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
                 {this.state.image
                     ? this.state.image.link.map(link => {
                         return <div className="row">
                             <div className="mx-auto">
-                                <img src={link} alt={this.state.image.book}></img>
+                                <center>
+                                <img src={link} alt={this.state.image.book} className="img"></img>
+                                </center>
                             </div>
                         </div>
                     })
                     : ""}
+                </center>
             </div>
         )
     }
