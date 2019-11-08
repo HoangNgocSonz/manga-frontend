@@ -9,9 +9,12 @@ export default class NavBar extends Component {
 		return (
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div className="container">
-					<Link to={"/"} >
-						<a class="navbar-brand" href="#">Home</a>
-					</Link>
+					<Link to={{
+                        pathname: `/`,
+                        }}>
+                        <a class="navbar-brand" href="#">Home</a>
+                    </Link>
+
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -22,8 +25,20 @@ export default class NavBar extends Component {
 									Category
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Shounen</a>
-									<a class="dropdown-item" href="#">Seinen</a>
+									<Link to={{
+                                            pathname: `/category/${"Shounen"}`,
+                                            state: { category: "Shounen" }
+                                        }}>
+                                            <a class="dropdown-item" href="#">Shounen</a>
+                                    </Link>
+
+									<Link to={{
+                                            pathname: `/category/${"Seinen"}`,
+                                            state: { category: "Seinen" }
+                                        }}>
+                                            <a class="dropdown-item" href="#">Seinen</a>
+                                    </Link>
+									
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Something else here</a>
 								</div>
