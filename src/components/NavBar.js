@@ -12,7 +12,7 @@ export default class NavBar extends Component {
 					<Link to={{
                         pathname: `/`,
                         }}>
-                        <a className="navbar-brand" href="#">Home</a>
+                        <a className="navbar-brand" href="#">Trang chủ</a>
                     </Link>
 
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@ export default class NavBar extends Component {
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Category
+									Thể loại
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<Link to={{
@@ -42,9 +42,6 @@ export default class NavBar extends Component {
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Something else here</a>
 								</div>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 							</li>
 						</ul>
 						<SearchField category={this.props.category} onSearchChanged={this.props.onSearchChanged} />
