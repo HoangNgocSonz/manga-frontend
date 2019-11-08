@@ -3,7 +3,7 @@ import axios from '../axios';
 import '../css/DetailScreen.css';
 import { Link } from 'react-router-dom';
 
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbarNot';
 
 export default class DetailScreen extends Component {
 	state = {
@@ -31,7 +31,7 @@ export default class DetailScreen extends Component {
 					<div className="row" id="rowAvatar">
 						<div className="col-lg-2 col-md-3 col-sm-4 col-4">
 							{this.state.image ?
-								<img src={this.state.image.avalink} className="detailAvatar"></img>
+								<img src={this.state.image.avalink} alt="Detail avatar" className="detailAvatar"></img>
 								: ''}
 						</div>
 						<div className="col-lg-10 col-md-9 col-sm-6 col-6" >

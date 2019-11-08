@@ -19,7 +19,6 @@ export default class HomeScreen extends Component {
                 this.setState({
                     images: data.data.data,
                 })
-                console.log(this.images);
             })
             .catch((err) => console.log(err));
     }
