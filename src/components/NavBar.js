@@ -34,7 +34,10 @@ export default class NavBar extends Component {
                 </nav>
 
                 <div className="thanh2">
-                    <span className="trangchu">Trang chủ</span>
+					<Link to={"/"} >
+						<span className="trangchu">Trang chủ</span>
+                	</Link>
+                    
                     <span className="hoverWrapper" ><span className="theLoai"> Thể loại</span> 
                         <div className="hoverShow2">
 
