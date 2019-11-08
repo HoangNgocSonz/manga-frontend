@@ -40,7 +40,7 @@ export default class DetailScreen extends Component {
 											<h3>{this.state.image.title}</h3>
 											<p className="contentAvatar">Tác giả: {this.state.image.author}</p>
 											<Link to={{
-												pathname: '/category',
+												pathname: `/category/${this.state.image.category}`,
 												state: { category: this.state.image.category }
 											}}>
 												<button type="button" class="btn btn-outline-success" id="contentAvatar">
