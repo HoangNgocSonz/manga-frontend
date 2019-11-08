@@ -25,15 +25,28 @@ export default class MainContent extends Component {
                 <div className="container bg-dark px-3" id="hot">
                     <div className="row">
                         <div className="col-3">
-                            <img className="hot1" src={nanatsu}></img>
-                            <img className="hot1" src={kimetsu}></img>
+                            <Link to={`/api/book/5dc04bf0b91f984b0428a020`} >
+                                <img className="hot1" src={nanatsu}></img>
+                            </Link>
+                            <Link to={`/api/book/5dc4da18f626b800178dbb87`} >
+                                <img className="hot1" src={kimetsu}></img>
+                            </Link>
                         </div>
                         <div className="col-6">
+                            <Link to={`/api/book/5dc04891b91f984b0428a01c`} >
                             <img className="hot2" src={onepiece}></img>
+                            </Link>
+                            
                         </div>
                         <div className="col-3">
-                            <img className="hot1" src={myHero}></img>
-                            <img className="hot1" src={onePunch}></img>
+                            <Link to={`/api/book/5dc4e049f626b800178dbb89`} >
+                                <img className="hot1" src={myHero}></img>
+                            </Link>
+                            <Link to={`/api/book/5dc2059f3363cf4e303dc869`} >
+                                <img className="hot1" src={onePunch}></img>
+                            </Link>
+                            
+                           
                         </div>
                     </div>
                 </div>
