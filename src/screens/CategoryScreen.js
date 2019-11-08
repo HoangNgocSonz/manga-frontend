@@ -3,7 +3,7 @@ import Avatar from '../components/Avatar';
 import '../css/MainContent.css';
 import axios from '../axios';
 import { Link } from 'react-router-dom';
-
+import NavBar from '../components/navbarNot';
 export default class CategoryScreen extends Component {
     state = {
         image: [],
@@ -31,6 +31,7 @@ export default class CategoryScreen extends Component {
         );
         return (
             <div>
+                <NavBar/>
                 <div className="main_content container">
                     <div className="row">
                         {allAvatars}
