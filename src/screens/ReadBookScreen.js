@@ -3,6 +3,7 @@ import axios from '../axios';
 import { from } from 'rxjs';
 import NavBar from '../components/navbarNot';
 import '../css/read.css';
+import NextButton from'../components/nextButton';
 
 export default class ReadBookScreen extends Component {
     state = {};
@@ -14,6 +15,7 @@ export default class ReadBookScreen extends Component {
                 this.setState({
                     image: data.data.data
                 });
+                console.log(this.props);
             })
             .catch((err) => console.log(err));
     }
@@ -25,7 +27,7 @@ export default class ReadBookScreen extends Component {
             <div className="container">
                 <center>
                     <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
-                    {this.state.image && this.state.image.number > 1 ? <button type="button" class="btn btn-primary my-2">Previous Chapter</button> : ""}
+                    {/* {this.state.image && this.state.image.number > 1 ? <button type="button" class="btn btn-primary my-2">Previous Chapter</button> : ""} */}
                     {this.state.image
                         ? this.state.image.link.map(link => {
                             return <div className="row">
@@ -37,7 +39,9 @@ export default class ReadBookScreen extends Component {
                             </div>
                         })
                         : ""}
-                    {this.state.image && this.state.image.number < 100 ? <button type="button" class="btn btn-primary my-2">Next Chapter</button> : ""}
+                        <NextButton infoNext={[]}/>
+                    {/* {this.state.image && this.state.image.number < 100 ? <button type="button" class="btn btn-primary my-2">Next Chapter</button> : ""} */}
+                    
                 </center>
             </div>
         )
