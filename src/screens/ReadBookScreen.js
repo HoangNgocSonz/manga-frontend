@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../axios';
+import { from } from 'rxjs';
+import NavBar from '../components/NavBar';
 
 export default class ReadBookScreen extends Component {
     state = {};
@@ -16,9 +18,12 @@ export default class ReadBookScreen extends Component {
             .catch((err) => console.log(err));
     }
 
+    _onSearchChanged = text => this.setState({ searchString: text });
+
     render() {
         return (
             <div className="container">
+                <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
                 {this.state.image
                     ? this.state.image.link.map(link => {
                         return <div className="row">

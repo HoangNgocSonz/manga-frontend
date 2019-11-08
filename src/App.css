@@ -1,11 +1,11 @@
 body {
-	background: #ebebeb;
+	background: #bababa;
 }
 
 .navbar {
-	background: white;
+	background: #ffffff;
 }
 
-.avatar {
-	background: #ebebeb;
+.avatar:hover {
+	background: #bababa;
 }

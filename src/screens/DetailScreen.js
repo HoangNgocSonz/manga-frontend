@@ -21,10 +21,12 @@ export default class DetailScreen extends Component {
 			.catch((err) => console.log(err));
 	}
 
+	_onSearchChanged = text => this.setState({ searchString: text });
+
 	render() {
 		return (
 			<div>
-				<NavBar category={this.state.image ? this.state.image.category : ""} />
+				<NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
 				<div className="main_content container" id="container">
 					<div className="row" id="rowAvatar">
 						<div className="col-lg-2 col-md-3 col-sm-4 col-4">
@@ -43,7 +45,7 @@ export default class DetailScreen extends Component {
 												pathname: `/category/${this.state.image.category}`,
 												state: { category: this.state.image.category }
 											}}>
-												<button type="button" class="btn btn-outline-success" id="contentAvatar">
+												<button type="button" class="btn btn-outline-primary" id="contentAvatar">
 													{this.state.image.category}
 												</button>
 											</Link>
@@ -59,7 +61,7 @@ export default class DetailScreen extends Component {
 						{this.state.image
 							? this.state.image.chapter.map(chapter => {
 								return <Link to={`/api/chapter/${chapter._id}`} >
-									<button className="btn btn-outline-successbtn btn-outline-success">
+									<button className="btn btn-outline-primarybtn btn-outline-primary">
 										{chapter.number}
 									</button>
 								</Link>

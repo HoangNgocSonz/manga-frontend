@@ -10,6 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import CategoryScreen from './screens/CategoryScreen';
 import ReadBookScreen from './screens/ReadBookScreen';
+import ScrollToTop from './components/ScrollToTop';
 
 export default class App extends Component {
 	state = {};
@@ -33,6 +34,7 @@ export default class App extends Component {
 		return (
 			<BrowserRouter>
 				<div className="App">
+					<ScrollToTop />
 					<Route exact path="/" render={(props) => {
 						return <HomeScreen {...props} username={this.state.username} onLogin={this._onLogin} />
 					}} />
