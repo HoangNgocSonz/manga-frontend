@@ -38,6 +38,12 @@ export default class NavBar extends Component {
                                         }}>
                                             <a class="dropdown-item" href="#">Seinen</a>
                                     </Link>
+									<Link to={{
+                                            pathname: `/category/${"Action"}`,
+                                            state: { category: "Action" }
+                                        }}>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                    </Link>
 									
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Something else here</a>
