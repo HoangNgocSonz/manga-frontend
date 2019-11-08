@@ -3,23 +3,24 @@ import Avatar from '../components/Avatar';
 import '../css/MainContent.css';
 import axios from '../axios';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/navbarNot';
+import NavBar from '../components/NavBar';
+
 export default class CategoryScreen extends Component {
     state = {
         image: [],
     };
     componentDidMount() {
-        console.log('props', this.props)
         axios
-            .get(`/api/book?category=${this.props.match.params.name}`)
+            .get(`/api/book?category=${this.props.match.params.category}`)
             .then((data) => {
                 this.setState({
                     image: data.data.data
                 });
-                console.log(this.state.image);
             })
             .catch((err) => console.log(err));
     }
+
+    _onSearchChanged = text => this.setState({ searchString: text });
 
     render() {
         const allAvatars = this.state.image.map(img =>
@@ -29,11 +30,14 @@ export default class CategoryScreen extends Component {
                 </Link>
             </div>
         );
+
+
         return (
             <div>
-                <NavBar/>
+                <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
                 <div className="main_content container">
                     <div className="row">
+                        <h1>{this.state.image ? this.state.image.category : ""}</h1><br />
                         {allAvatars}
                     </div>
                 </div>
