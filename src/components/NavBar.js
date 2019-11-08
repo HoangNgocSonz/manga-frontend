@@ -1,94 +1,41 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../css/Navbar.css'
-// import SearchField from './SearchField';
-// import logo from '../img/logo.png';
-// import ProfilePanel from './ProfilePanel';
+
+import SearchField from './SearchField';
 
 export default class NavBar extends Component {
-    state = {
-        collapsed: true,
-    };
-
-    find = event => this.props.onSearchChanged(event.target.value);
-
-    toggleNavbar = () => {
-        this.setState({
-            collapsed: !this.state.collapsed,
-        });
-    }
-
-    render() {
-        const collapsed = this.state.collapsed;
-        const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
-        const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
-        return (
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div className="nameOfWeb">MangaX</div>
-                    <div className={`${classOne}`} id="navbarSupportedContent">
-                        <form className="form-inline my-2 my-lg-0">
-                            <input onChange={this.find} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        </form>
-                    </div>
-                </nav>
-
-                <div className="thanh2">
+	render() {
+		return (
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div className="container">
 					<Link to={"/"} >
-						<span className="trangchu">Trang chủ</span>
-                	</Link>
-                    
-                    <span className="hoverWrapper" ><span className="theLoai"> Thể loại</span> 
-                        <div className="hoverShow2">
-
-                        </div>
-                        <div className="hoverShow1">
-                            <div className="container">
-                                <div className="row" >
-                                    <div className="col-2">
-                                        <Link to={{
-                                                pathname: `/category/${"Shounen"}`,
-                                                state: {  category: "Shounen" }
-                                            }}>
-                                                <div className="col-1">
-                                                {"Shounen"}
-                                            </div>
-                                        </Link>
-                                    </div>
-
-                                    <div className="col-2">
-                                        <Link to={{
-                                            pathname: `/category/${"Action"}`,
-                                            state: { category: "Action" }
-                                        }}>
-                                            <div className="col-1">
-                                                {"Action"}
-                                            </div>
-                                        </Link>
-                                    </div>
-
-                                    <div className="col-2">
-                                        <Link to={{
-                                            pathname: `/category/${"Seinen"}`,
-                                            state: { category: "Seinen" }
-                                        }}>
-                                            <div className="col-1">
-                                                {"Seinen"}
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        </div>
-                        <div className="hoverHide">
-
-                        </div>
-                    </span>
-                </div>
-            </div>
-            
-
-        );
-    }
+						<a class="navbar-brand" href="#">Home</a>
+					</Link>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Category
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Shounen</a>
+									<a class="dropdown-item" href="#">Seinen</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+							</li>
+						</ul>
+						<SearchField category={this.props.category} onSearchChanged={this.props.onSearchChanged} />
+					</div>
+				</div>
+			</nav>
+		);
+	}
 }
