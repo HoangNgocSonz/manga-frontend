@@ -3,7 +3,7 @@ import axios from '../axios';
 import '../css/DetailScreen.css';
 import { Link } from 'react-router-dom';
 
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbarNot';
 
 export default class DetailScreen extends Component {
 	state = {
