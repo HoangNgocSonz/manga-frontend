@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from '../axios';
-import { from } from 'rxjs';
+import LazyLoad from 'react-lazyload'
+
 import NavBar from '../components/navbarNot';
 import '../css/read.css';
-import NextButton from'../components/nextButton';
+import NextButton from '../components/nextButton';
 
 export default class ReadBookScreen extends Component {
     state = {};
@@ -33,15 +34,17 @@ export default class ReadBookScreen extends Component {
                             return <div className="row">
                                 <div className="mx-auto">
                                     <center>
-                                        <img src={link} alt={this.state.image.book} className="img"></img>
+                                        <LazyLoad height={200} once={true} >
+                                            <img src={link} alt={this.state.image.book} className="img"></img>
+                                        </LazyLoad>
                                     </center>
                                 </div>
                             </div>
                         })
                         : ""}
-                        <NextButton infoNext={[]}/>
+                    <NextButton infoNext={[]} />
                     {/* {this.state.image && this.state.image.number < 100 ? <button type="button" class="btn btn-primary my-2">Next Chapter</button> : ""} */}
-                    
+
                 </center>
             </div>
         )
