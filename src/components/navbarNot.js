@@ -10,10 +10,10 @@ export default class NavBar extends Component {
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div className="container">
 					<Link to={{
-                        pathname: `/`,
-                        }}>
-                        <a className="navbar-brand" href="#">Trang chủ</a>
-                    </Link>
+						pathname: `/`,
+					}}>
+						<a className="navbar-brand" href="#">Trang chủ</a>
+					</Link>
 
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
@@ -26,25 +26,18 @@ export default class NavBar extends Component {
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<Link to={{
-                                            pathname: `/category/${"Shounen"}`,
-                                            state: { category: "Shounen" }
-                                        }}>
-                                            <a class="dropdown-item" href="#">Shounen</a>
-                                    </Link>
+										pathname: `/category/${"Shounen"}`,
+										state: { category: "Shounen" }
+									}}>
+										<a class="dropdown-item" href="#">Shounen</a>
+									</Link>
 
 									<Link to={{
-                                            pathname: `/category/${"Seinen"}`,
-                                            state: { category: "Seinen" }
-                                        }}>
-                                            <a class="dropdown-item" href="#">Seinen</a>
-                                    </Link>
-									<Link to={{
-                                            pathname: `/category/${"Action"}`,
-                                            state: { category: "Action" }
-                                        }}>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                    </Link>
-									
+										pathname: `/category/${"Seinen"}`,
+										state: { category: "Seinen" }
+									}}>
+										<a class="dropdown-item" href="#">Seinen</a>
+									</Link>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Something else here</a>
 								</div>
