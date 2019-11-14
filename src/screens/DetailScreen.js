@@ -3,7 +3,7 @@ import axios from '../axios';
 import '../css/DetailScreen.css';
 import { Link } from 'react-router-dom';
 
-import NavBar from '../components/navbarNot';
+import NavBar from '../components/NavBar';
 
 export default class DetailScreen extends Component {
 	state = {
@@ -21,12 +21,10 @@ export default class DetailScreen extends Component {
 			.catch((err) => console.log(err));
 	}
 
-	_onSearchChanged = text => this.setState({ searchString: text });
-
 	render() {
 		return (
 			<div>
-				<NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
+				<NavBar />
 				<div className="main_content container" id="container">
 					<div className="row" id="rowAvatar">
 						<div className="col-lg-2 col-md-3 col-sm-4 col-4">

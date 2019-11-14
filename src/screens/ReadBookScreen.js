@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from '../axios';
 import LazyLoad from 'react-lazyload'
 
-import NavBar from '../components/navbarNot';
+import NavBar from '../components/NavBar';
 import '../css/read.css';
 import NextButton from '../components/nextButton';
 
@@ -21,13 +21,11 @@ export default class ReadBookScreen extends Component {
             .catch((err) => console.log(err));
     }
 
-    _onSearchChanged = text => this.setState({ searchString: text });
-
     render() {
         return (
             <div className="container">
                 <center>
-                    <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
+                    <NavBar />
                     {/* {this.state.image && this.state.image.number > 1 ? <button type="button" class="btn btn-primary my-2">Previous Chapter</button> : ""} */}
                     {this.state.image
                         ? this.state.image.link.map(link => {

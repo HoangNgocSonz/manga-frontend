@@ -33,24 +33,26 @@ export default class NavBar extends Component {
 									</Link>
 
 									<Link to={{
-                                            pathname: `/category/${"Seinen"}`,
-                                            state: { category: "Seinen" }
-                                        }}>
-                                            <a class="dropdown-item" href="#">Seinen</a>
-                                    </Link>
+										pathname: `/category/${"Seinen"}`,
+										state: { category: "Seinen" }
+									}}>
+										<a class="dropdown-item" href="#">Seinen</a>
+									</Link>
 									<Link to={{
-                                            pathname: `/category/${"Action"}`,
-                                            state: { category: "Action" }
-                                        }}>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                    </Link>
-									
+										pathname: `/category/${"Action"}`,
+										state: { category: "Action" }
+									}}>
+										<a class="dropdown-item" href="#">Action</a>
+									</Link>
+
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Something else here</a>
 								</div>
 							</li>
 						</ul>
-						<SearchField category={this.props.category} onSearchChanged={this.props.onSearchChanged} />
+						{this.props.onSearchChanged ?
+							<SearchField onSearchChanged={this.props.onSearchChanged} />
+							: ""}
 					</div>
 				</div>
 			</nav>

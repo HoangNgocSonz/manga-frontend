@@ -35,7 +35,7 @@ export default class HomeScreen extends Component {
 
         return (
             <div>
-                <NavBar searchCategory={this._searchCategory} onSearchChanged={this._onSearchChanged} />
+                <NavBar onSearchChanged={this._onSearchChanged} />
                 <MainContent img={displayedImages} />
             </div>
         )
